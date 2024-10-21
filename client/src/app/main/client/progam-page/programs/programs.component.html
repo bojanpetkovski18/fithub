@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row">
+    <app-program-banner></app-program-banner>
+  </div>
+
+  <div *ngIf="isLoading" class="loader">
+    <div class="spinner"></div>
+  </div>
+
+  <div class="row ro" *ngFor="let item of listPrograms">
+    <app-programs-grid [program]="item"></app-programs-grid>
+    <hr class="hr" />
+  </div>
+</div>

@@ -1,0 +1,44 @@
+h3 {
+    border-bottom: 1px solid black;
+    margin-top: 40px;
+    padding: 10px;
+    font-weight: 500;
+    width: 400px;
+  }
+  
+  table {
+    border-collapse: collapse;
+    background: rgb(237, 237, 237);
+    width: 400px;
+  }
+  
+  th {
+    background: rgb(194, 192, 192);
+    font-size: 17px;
+  }
+  
+  td {
+    font-size: 15px;
+    font-weight: 600;
+    text-align: center;
+  }
+  
+  th {
+    font-weight: 900;
+  }
+  
+  table,
+  th,
+  td {
+    border: 1px solid black;
+  }
+  
+  td {
+    border: 1px solid black;
+  }
+  
+  button {
+    width: 100%;
+    border-radius: 0%;
+  }
+  

@@ -1,0 +1,68 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px;
+  }
+  
+  .row {
+    margin-top: 150px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  h2 {
+    padding: 15px;
+    border-bottom: 1px solid black;
+    font-weight: 700;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  tbody button {
+    margin: 0 5px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgb(237, 237, 237);
+  }
+  
+  th {
+    background: rgb(194, 192, 192);
+    font-size: 17px;
+    font-weight: 900;
+    border-bottom: 1px solid black;
+    padding: 10px;
+  }
+  
+  td {
+    font-size: 15px;
+    font-weight: 600;
+    padding: 10px;
+  }
+  
+  table,
+  th,
+  td {
+    border: 1px solid black;
+  }
+  
+  @media (max-width: 768px) {
+    .row {
+      margin-top: 100px;
+    }
+  
+    .col-md-9,
+    .col-md-3 {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  
+    th,
+    td {
+      font-size: 14px;
+    }
+  }

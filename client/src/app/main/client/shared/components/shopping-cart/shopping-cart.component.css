@@ -1,0 +1,54 @@
+.checkout-list-item {
+    width: 250px;
+    height: 50px;
+    border-bottom: 1px solid rgb(150, 150, 150);
+    margin-bottom: 12px;
+  }
+  
+  a {
+    color: rgb(184, 184, 184);
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: none;
+    color: white;
+  }
+  
+  .mybutton {
+    transform: scale(0.75);
+    float: right;
+  }
+  
+  .link-text {
+    line-height: 35px;
+  }
+  
+  .total-success {
+    font-size: 15px;
+    color: rgb(129, 191, 37);
+  }
+
+  .quantity-success {
+    font-size: 15px;
+    color: rgb(42, 114, 145);
+    font-weight: 700;
+  }
+  
+  .total-failiure {
+    font-size: 15px;
+    color: rgb(191, 37, 37);
+    font-weight: 700;
+  }
+  
+  h5 {
+    text-align: center;
+  }
+  
+  .btn-link {
+    font-weight: 900;
+  }
+  
+  .checkout-list {
+    padding-top: 20px;
+  }

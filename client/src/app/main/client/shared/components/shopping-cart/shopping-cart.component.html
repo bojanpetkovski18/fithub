@@ -1,0 +1,24 @@
+<ul class="checkout-list" *ngIf="products.length && shoppingCart">
+  <li class="checkout-list-item" *ngFor="let product of products">
+    <app-shopping-cart-item 
+      [product]="product" 
+      [shoppingCartUid]="shoppingCart.uid" 
+      (productAddedToCart)="handleProductAdded()">
+    </app-shopping-cart-item>
+  </li>
+</ul>
+<ul class="checkout-list" *ngIf="!products.length">
+  <li class="checkout-list-item">
+    <a class="link-text" style="font-size: large;">The Cart is Empty!</a>
+  </li>
+</ul>
+<h5 *ngIf="shoppingCart">
+  <a style="line-height: 35px; margin-right: 10px;">Total: 
+    <span class="total-success">${{ shoppingCart.totalPrice }}</span>
+  </a>
+  <a style="line-height: 35px; margin-right: 10px;">Q: 
+    <span class="quantity-success">{{ shoppingCart.quantity }}</span>
+  </a>
+  <button [disabled]="isDisabled" routerLink="/checkout" class="btn-link">CHECKOUT</button>
+  <button (click)="clearItems()" class="btn-link">CLEAR</button>
+</h5>

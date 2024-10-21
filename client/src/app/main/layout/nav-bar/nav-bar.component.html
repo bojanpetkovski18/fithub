@@ -1,0 +1,55 @@
+<nav class="navbar navbar-inverse navbar-fixed-top" (loginSuccess)="ngOnInit()">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <a class="navbar-brand" routerLink="/">
+        <img [src]="imgSrc" (mouseover)="imgSrc = 'assets\\images\\logoHover.png'"
+          (mouseout)="imgSrc = 'assets\\images\\logo.png'" />
+      </a>
+      <ul class="nav navbar-nav">
+        <li [routerLinkActiveOptions]="{ exact: true }" [routerLinkActive]="['active-link']">
+          <a routerLink="/"><i class="fas fa-award"></i> TOP OFFERS</a>
+        </li>
+        <li [routerLinkActive]="['active-link']">
+          <a routerLink="/supplements"><i class="fas fa-prescription-bottle"></i> SUPPLEMENTS</a>
+        </li>
+        <li [routerLinkActive]="['active-link']">
+          <a routerLink="/gear"><i class="fas fa-dumbbell"></i> GEAR</a>
+        </li>
+        <li [routerLinkActive]="['active-link']">
+          <a routerLink="/programs"><i class="fab fa-youtube"></i> PROGRAMS</a>
+        </li>
+        <li [routerLinkActive]="['active-link']">
+          <a routerLink="/contact-us"><i class="fas fa-phone-square-alt"></i> CONTACT</a>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdownn" *ngIf="username">
+          <button class="dropbtn">
+            <i class="glyphicon glyphicon-shopping-cart"></i> CART
+          </button>
+          <div class="dropdownn-content">
+            <app-shopping-cart></app-shopping-cart>
+          </div>
+        </li>
+        <li *ngIf="isAdmin">
+          <a routerLink="/admin">
+            <i class="fas fa-user"></i>
+          </a>
+        </li>
+        <li class="dropdown">
+          <button class="btn btn-warning dropdown-toggle" type="button" id="accountButton" data-toggle="dropdown">
+            <a *ngIf="username" (click)="logout()" style="color: white !important" >Log Out</a>
+            <a *ngIf="!username" routerLink="/login" style="color: white !important">Log In</a>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

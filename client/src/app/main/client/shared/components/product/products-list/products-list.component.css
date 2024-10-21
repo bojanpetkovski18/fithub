@@ -1,0 +1,40 @@
+div {
+    margin-bottom: 50px;
+  }
+  
+  .filters {
+    width: 120.8%;
+    margin-left: -100px;
+    color: white;
+    background-color: black;
+    border: 1px dashed black;
+    padding: 30px;
+    margin-top: -25px;
+    padding-top: 50px;
+  }
+  
+  input {
+    width: 15%;
+  }
+  
+  .form-control {
+    display: inline !important;
+    margin-right: 5px;
+  }
+  
+  .form-group {
+    display: inline !important;
+    margin: 10px;
+  }
+  
+  .myInput { width: 7.5% !important; }
+  
+  .myGroup { margin-left: 30px !important; }
+  
+  .sortInput { width: 10% !important; }
+  
+  option {
+    font-weight: 500;
+  }
+  
+  

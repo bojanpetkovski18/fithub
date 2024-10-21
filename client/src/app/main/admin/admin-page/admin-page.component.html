@@ -1,0 +1,49 @@
+<nav class="navbar navbar-inverse navbar-fixed-left">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+        aria-controls="navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <br><br><br><br><br><br>
+      <ul class="nav navbar-nav" style="display: block;">
+        <li class="arrow litem"><a routerLink="/admin"><i class="fa fa-tachometer"></i><br>Dashboard</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"><i class="fa fa-table"
+              aria-hidden="true"></i><br>Tables<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a routerLink="/admin/categories">Categories</a></li>
+            <li><a routerLink="/admin/brands">Brands</a></li>
+            <li><a routerLink="/admin/products">Products <i class="fas fa-star"></i></a></li>
+            <li><a routerLink="/admin/payments">Payments</a></li>
+          </ul>
+        </li>
+        <li class="dropdown litem">
+          <a class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"><i class="fa fa-file"
+              aria-hidden="true"></i><br>Report<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a>Report A</a></li>
+            <li><a>Report B</a></li>
+          </ul>
+        </li>
+        <li class="dropdown litem">
+          <a class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"><i class="fa fa-user"
+              aria-hidden="true"></i><br>Attendance<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a>Team Attendance</a></li>
+            <li><a>User Attendance</a></li>
+          </ul>
+        </li>
+        <li class="litem"><a><i class="fa fa-map-marker" aria-hidden="true"></i><br>Location</a></li>
+        <li class="litem"><a routerLink="/"><i style="transform: scale(2); margin-bottom: 5px;"
+              class="fas fa-sign-out-alt"></i><br>Log out</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<router-outlet></router-outlet>

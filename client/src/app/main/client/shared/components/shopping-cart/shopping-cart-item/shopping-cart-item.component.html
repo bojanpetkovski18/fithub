@@ -1,0 +1,8 @@
+<h5 class="product-container">
+    <span *ngIf="product">
+        <a [routerLink]="['/details', product?.uid]" class="link-text">
+            {{ product.name }} - <span class="text-success">${{ product.newPrice }}</span>
+        </a>
+        <i (click)="removeProduct(product)" class="fa-solid fa-xmark text-danger remove-icon"></i>
+    </span>
+</h5>  

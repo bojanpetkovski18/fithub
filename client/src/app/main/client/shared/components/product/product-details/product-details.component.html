@@ -1,0 +1,77 @@
+<div class="container-fluid" *ngIf="product">
+  <div class="cart">
+    <div class="row row1">
+      <div class="col-md-4">
+        <img src="{{product.imageUrl}}" width="100%" id="ProductImg" />
+      </div>
+      <div class="col-md-6">
+        <h1 class="product-title">
+          <span style="font-style: normal;">{{product.brand}}</span> - {{product.name}}
+          <span *ngIf="product.discount">
+            <span class="product-new-label">Sale {{ product.discount }}%</span>
+          </span>
+        </h1>
+        <div class="reviews">
+          <span *ngFor="let star of [1, 2, 3, 4, 5]"
+                class="fa-star"
+                [ngClass]="star <= product.rating ? 'fa-solid' : 'fa-regular'">
+          </span>
+          <p>{{ product.oldPrice + (product.oldPrice * product.discount) + 154 }} reviews</p>
+        </div>
+        <div class="price">
+          <span *ngIf="product.discount">${{ product.newPrice }}</span>
+          <span *ngIf="!product.discount">${{ product.oldPrice }}</span>
+        </div>
+        <div class="row">
+          <div *ngIf="product.category=='Gear'" class="col-md-4">
+            <h4>Color</h4>
+            <div class="colors">
+              <div class="black"></div>
+              <div class="red"></div>
+              <div class="white"></div>
+              <div class="yellow"></div>
+            </div>
+          </div>
+          <div *ngIf="product.category=='Gear'" class="col-md-4">
+            <h5>Size</h5>
+            <select class="size custom-select">
+              <option>Select Size</option>
+              <option>XS</option>
+              <option>S</option>
+              <option>M</option>
+              <option>L</option>
+              <option>XL</option>
+            </select>
+          </div>
+          <div class="col-md-3 qty">
+            <span>Quantity ({{ product.quantity }})</span>
+            <select class="quantity custom-select">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </div>
+        </div>
+        <div class="product-inf">
+          <div class="tabs-content">
+            <div id="Description">
+              <p>{{product.description}}</p>
+            </div>
+          </div>
+        </div>
+        <div class="buttons">
+          <div class="row">
+            <div class="col-md-6">
+              <a (click)="onAddToCart()" class="custom-btn">Add To Cart <i class="fas fa-angle-right"></i></a>
+            </div>
+            <div class="col-md-6">
+              <a (click)="OnBack()" class="custom-btn"><i class="fas fa-angle-left"></i>&nbsp;&nbsp; Go Back</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

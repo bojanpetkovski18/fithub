@@ -1,0 +1,37 @@
+.product-container {
+  position: relative;           /* Create a relative positioning context for the icon */
+  padding: 10px 0;              /* Add padding around the content */
+}
+
+.link-text {
+  color: rgb(184, 184, 184);
+  text-decoration: none;
+  line-height: 35px;
+}
+
+.link-text:hover {
+  text-decoration: none;
+  color: white;
+}
+
+.text-success {
+  color: green;                 /* Ensures consistent green color for newPrice */
+}
+
+.remove-icon {
+  position: absolute;           /* Position the icon relative to the container */
+  right: 0;                     /* Aligns the icon to the right */
+  top: 50%;                     /* Vertically center the icon */
+  transform: translateY(-50%);   /* Adjust vertical alignment */
+  cursor: pointer;              /* Change cursor to pointer on hover */
+}
+
+.remove-icon:hover {
+  transform: translateY(-50%) scale(1.2);  /* Add hover scaling effect */
+  transition: transform 0.2s;   /* Smooth transition for hover effect */
+}
+
+h5 {
+  margin: 0;                    /* Removes default margin */
+  font-size: 15px;
+}

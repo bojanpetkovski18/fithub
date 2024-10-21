@@ -1,0 +1,121 @@
+<br><br><br><br>
+<div style="margin-bottom: -150px;">
+  <form id="contactForm" action="/" style="margin-top: 0px; margin-bottom: 100px" [formGroup]="contactForm"
+    (ngSubmit)="onSubmit()">
+    <h1>If you have any difficulties or questions contact us!</h1>
+    <p style="
+        text-align: left;
+        margin: 1em;
+        text-transform: capitalize;
+        font-size: 18px;
+      ">
+      Contact us via - <i class="fa fa-phone"></i> Phone (NMK) : <span style="color:darkolivegreen">+389
+        70-605/605</span>
+    </p>
+    <div class="contentform">
+      <div id="sendmessage">
+        Your message has been sent successfully. Thank you.
+      </div>
+
+      <div class="leftcontact">
+        <div class="form-group">
+          <p>Surname</p>
+          <span class="icon-case"><i class="fa fa-male"></i></span>
+          <input type="text" name="nom" id="nom" required="required" data-rule="required" formControlName="surname" />
+          <div class="validation" *ngIf="!surname!.valid && surname!.touched">
+            Please provide us your surname.
+          </div>
+        </div>
+
+        <div class="form-group">
+          <p>Name</p>
+          <span class="icon-case"><i class="fa fa-user"></i></span>
+          <input type="text" name="prenom" id="prenom" required="required" data-rule="required"
+            formControlName="name" />
+          <div class="validation" *ngIf="!name!.valid && name!.touched">
+            Please provide us your name.
+          </div>
+        </div>
+
+        <div class="form-group">
+          <p>E-mail</p>
+          <span class="icon-case">@</span>
+          <input type="email" name="email" id="email" required="required" data-rule="email" formControlName="email" />
+          <div class="validation" *ngIf="!email!.valid && email!.touched">
+            Please provide us your email.
+          </div>
+        </div>
+
+        <div class="form-group">
+          <p>Company</p>
+          <span class="icon-case"><i class="fa fa-home"></i></span>
+          <input type="text" name="society" id="society" data-rule="required" />
+          <div class="validation"></div>
+        </div>
+
+        <div class="form-group">
+          <p>Company Address</p>
+          <span class="icon-case"><i class="fa fa-location-arrow"></i></span>
+          <input type="text" name="adresse" id="adresse" data-rule="required" />
+          <div class="validation"></div>
+        </div>
+
+        <div class="form-group">
+          <p>Postcode</p>
+          <span class="icon-case"><i class="fa fa-map-marker"></i></span>
+          <input type="text" name="postal" id="postal" required="required" data-rule="required"
+            formControlName="code" />
+          <div class="validation" *ngIf="!code!.valid && code!.touched">
+            Please provide us your city's postcode. It must be 4 chars long.
+          </div>
+        </div>
+      </div>
+
+      <div class="rightcontact">
+        <div class="form-group">
+          <p>City</p>
+          <span class="icon-case"><i class="fa-solid fa-building"></i></span>
+          <input type="text" name="ville" id="ville" required="required" data-rule="required" formControlName="city" />
+          <div class="validation" *ngIf="!city!.valid && city!.touched">
+            Please provide us your city.
+          </div>
+        </div>
+
+        <div class="form-group">
+          <p>Phone number</p>
+          <span class="icon-case"><i class="fa fa-phone"></i></span>
+          <input type="text" name="phone" id="phone" required="required" data-rule="maxlen:10"
+            formControlName="phone" />
+          <div class="validation" *ngIf="!phone!.valid && phone!.touched">
+            Please provide us your phone number.
+          </div>
+        </div>
+
+        <div class="form-group">
+          <p>Function <span>*</span></p>
+          <span class="icon-case"><i class="fa fa-info"></i></span>
+          <input type="text" name="fonction" id="fonction" data-rule="required" />
+          <div class="validation"></div>
+        </div>
+
+        <div class="form-group">
+          <p>Subject</p>
+          <span class="icon-case"><i class="fa-solid fa-heading"></i></span>
+          <input type="text" name="sujet" id="sujet" required="required" data-rule="required" />
+          <div class="validation"></div>
+        </div>
+
+        <div class="form-group">
+          <p>Message</p>
+          <span class="icon-case"><i class="fa-solid fa-message"></i></span>
+          <textarea name="message" rows="14" data-rule="required" formControlName="msg"></textarea>
+          <div class="validation" *ngIf="!msg!.valid && msg!.touched">
+            Please provide us your message.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button type="submit" class="bouton-contact">Send</button>
+  </form>
+</div>

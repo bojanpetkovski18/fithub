@@ -1,0 +1,70 @@
+/* Preload all hover background images */
+.box {
+  transform: scale(0.999);
+  height: 400px;
+  overflow: hidden;
+  transition: width 1s ease-in-out, height 0.85s ease-in-out;
+  box-shadow: inset 0 0 5em 1em #000;
+  
+  /* Preload the default background image and hover background images */
+  background: url(/assets/images/backgroundBlack.jpg); /* Default background */
+  background-image: url(/assets/images/backgroundBlack.jpg), 
+                    url(/assets/images/backgroundRed.jpg), 
+                    url(/assets/images/backgroundYellow.jpg), 
+                    url(/assets/images/backgroundPurple.jpg), 
+                    url(/assets/images/backgroundBlue.jpg);
+  background-repeat: no-repeat;
+  background-size: cover; /* Maintain image size to avoid flashing */
+  will-change: width, height, transform;
+}
+
+.box a {
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  height: 100%;
+  display: block;
+  padding-top: 50px;
+  font-weight: 700;
+  font-size: 26px;
+}
+
+.box span {
+  display: block;
+  position: relative;
+  top: 100%;
+  text-align: center;
+  transition: top 1s ease-in-out;
+  transform: scale(0.8);
+  will-change: top;
+}
+
+.mynav:hover .box {
+  width: 10%;
+  height: 450px;
+}
+
+.mynav .box:hover {
+  width: 60%;
+}
+
+.box:hover span {
+  top: 5%;
+}
+
+/* Background image changes on hover */
+.box:nth-child(1):hover {
+  background: url(/assets/images/backgroundRed.jpg);
+}
+
+.box:nth-child(2):hover {
+  background: url(/assets/images/backgroundYellow.jpg);
+}
+
+.box:nth-child(3):hover {
+  background: url(/assets/images/backgroundPurple.jpg);
+}
+
+.box:nth-child(4):hover {
+  background: url(/assets/images/backgroundBlue.jpg);
+}

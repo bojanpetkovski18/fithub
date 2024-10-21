@@ -1,0 +1,111 @@
+.card {
+  background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white background */
+  border: 3px solid #a41d33; /* Add a solid border with a specific color */
+  border-radius: 10px; /* Rounded corners for the card */
+  padding: 20px; /* Internal spacing */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  margin: 20px 0; /* Spacing between cards */
+  transition: box-shadow 0.3s; /* Smooth shadow transition */
+}
+
+.card:hover {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+}
+
+
+.pad-left {
+  padding-left: 50px; /* Adjusted for better spacing */
+}
+
+.program-img {
+  width: 100%; /* Make responsive */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 8px; /* Rounded corners for a softer look */
+}
+
+.program-img-wrapper {
+  position: relative; /* Required for absolute positioning of play button */
+}
+
+.play-btn {
+  width: 15%;
+  height: auto;
+  z-index: 999;
+  position: absolute;
+  bottom: 30%; /* Adjusted for better positioning */
+  left: 50%;
+  transform: translateX(-50%); /* Center horizontally */
+  transition: transform 0.3s;
+
+  &:hover {
+    transform: translateX(-50%) scale(1.1); /* Slight scale on hover */
+  }
+}
+
+.play-btn__svg {
+  transition: fill 0.3s;
+  fill: #ffffff;
+  opacity: 0.75;
+}
+
+.play-btn:hover .play-btn__svg {
+  fill: #a41d33;
+  opacity: 1;
+}
+
+.program-heading {
+  line-height: 1.2;
+  font-family: "Open Sans", Arial, Helvetica, sans-serif;
+  font-size: 2rem; /* Larger font size */
+  margin-bottom: 10px; /* Spacing below heading */
+}
+
+.interaction {
+  margin: 10px 0; /* Spacing for interaction icons */
+  font-size: 1.5rem; /* Slightly smaller for better balance */
+  color: black; /* Text color */
+}
+
+.like-icon, .dislike-icon {
+  font-size: 2rem; /* Increase size of icons */
+  color: black; /* Inside color */
+  border-radius: 50%; /* Circular outline */
+  padding: 10px; /* Spacing inside the circle */
+  margin: 0 5px; /* Spacing between icons */
+  cursor: pointer; /* Change cursor to pointer */
+  transition: transform 0.3s, background-color 0.3s; /* Smooth transition for effects */
+}
+
+.like-icon:hover, .dislike-icon:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* Light background on hover */
+  transform: scale(1.25); /* Slightly increase size on hover */
+  color: blue;
+}
+
+.desc {
+  margin-top: 20px;
+  padding-top: 10px;
+  width: 100%; /* Full width for better alignment */
+  font-size: 16px;
+  border-top: 1px solid rgb(36, 36, 36);
+  transition: max-height 0.3s ease; /* Smooth transition for height */
+}
+
+.show-less {
+  max-height: 12rem; /* Set max height for show-less */
+  overflow: hidden;
+}
+
+.toggle-btn {
+  background-color: #a41d33; /* Button color */
+  color: white; /* Text color */
+  border: none; /* Remove border */
+  padding: 10px 15px; /* Button padding */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor */
+  transition: background-color 0.3s; /* Smooth background color change */
+}
+
+.toggle-btn:hover {
+  background-color: #8a1529; /* Darker shade on hover */
+}

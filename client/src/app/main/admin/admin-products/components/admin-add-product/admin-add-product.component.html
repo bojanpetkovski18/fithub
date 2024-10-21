@@ -1,0 +1,83 @@
+<div>
+  <h3>{{ productUid ? 'Edit' : 'Add' }} Product</h3>
+  <form [formGroup]="productForm" (ngSubmit)="saveForm()">
+    <table class="table table-hover">
+      <tr>
+        <td>Name</td>
+        <td>
+          <input type="text" placeholder="Enter a name..." class="form-control" formControlName="name">
+        </td>
+      </tr>
+      <tr>
+        <td>Image Url</td>
+        <td>
+          <input type="text" placeholder="Enter image url..." class="form-control" formControlName="imageUrl">
+        </td>
+      </tr>
+      <tr>
+        <td>Price</td>
+        <td>
+          <input type="number" placeholder="Enter price..." class="form-control" formControlName="price">
+        </td>
+      </tr>
+      <tr>
+        <td>Discount</td>
+        <td>
+          <input type="number" placeholder="Enter discount..." class="form-control" formControlName="discount">
+        </td>
+      </tr>
+      <tr>
+        <td>Quantity</td>
+        <td>
+          <input type="number" placeholder="Enter discount..." class="form-control" formControlName="quantity">
+        </td>
+      </tr>
+      <tr>
+        <td>Rating</td>
+        <td>
+          <input type="range" min="0" max="5" placeholder="Enter rating..." class="form-control" formControlName="rating">
+        </td>
+      </tr>
+      <tr>
+        <td>Description</td>
+        <td>
+          <textarea
+            formControlName="description"
+            rows="4"
+            placeholder="Enter your description">
+          </textarea>
+        </td>
+      </tr>
+      <tr>
+        <td>Category</td>
+        <td>
+          <select class="form-control" formControlName="categoryUid">
+          <option value="">Select a Category</option>
+          <option *ngFor="let category of categories" [value]="category.uid">
+            {{ category.name }}
+          </option>
+        </select>
+        </td>
+      </tr>
+      <tr>
+        <td>Brand</td>
+        <td>
+          <select class="form-control" formControlName="brandUid">
+          <option value="">Select a Brand</option>
+          <option *ngFor="let brand of brands" [value]="brand.uid">
+            {{ brand.name }}
+          </option>
+        </select>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <button class="btn btn-warning" (click)="clearForm()"><i class="fas fa-times"></i> Clear</button>
+        </td>
+        <td>
+          <button type="submit" class="btn btn-success"><i class="fa fa-save"></i> Save</button>
+        </td>
+      </tr>
+    </table>
+  </form>
+</div>

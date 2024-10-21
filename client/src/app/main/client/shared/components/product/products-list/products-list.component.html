@@ -1,0 +1,34 @@
+<div class="filters">
+    <div class="form-group" style="margin-left: 30px;">
+      <input type="text" [(ngModel)]='options.name' class="form-control" placeholder="Enter a product...">
+      <button class="btn btn-warning" (click)="onNameClear()"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="form-group">
+      <input type="text" [(ngModel)]='options.brand' class="form-control" placeholder="Enter a brand...">
+      <button class="btn btn-warning" (click)="onBrandClear()"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="form-group" style="margin-left: 70px;">
+      <label>Sort by &nbsp;</label>
+      <select [(ngModel)]='options.filters.sortBy' class="form-control" style="width: 20% !important;">
+        <option value="Name asc">Alpha &#8593; (asc)</option>
+        <option value="Name desc">Alpha &#8595; (desc)</option>
+        <option value="Price asc">Price &#8593; (asc)</option>
+        <option value="Price desc">Price &#8595; (desc)</option>
+      </select>
+    </div>
+  </div>
+  <div class="col-sm-4" style="transform: scale(0.95);" 
+       *ngFor="let product of products 
+                | filter: options.name : 'name' 
+                | filter: options.brand : 'brand' 
+                | sort: options.filters.sortBy 
+                | paginate: { itemsPerPage: 9, currentPage: options.filters.page }">
+    <app-product-grid [product]="product"></app-product-grid>
+  </div>
+  <div class="row">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+      <pagination-controls (pageChange)="options.filters.page = $event" #pagin></pagination-controls>
+    </div>
+    <div class="col-sm-4"></div>
+  </div>

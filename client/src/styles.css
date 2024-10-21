@@ -1,0 +1,18 @@
+@import "https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Questrial&display=swap");
+@import "../node_modules/alertifyjs/build/css/alertify.min.css";
+@import "../node_modules/alertifyjs/build/css/themes/bootstrap.min.css";
+@import url("https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css");
+body {
+  font-family: "Questrial", sans-serif !important;
+  font-size: 14px !important;
+  line-height: 16px !important;
+  color: #222 !important;
+  background: #fff;
+  background-image: url("./assets/Images/background.jpg") !important;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  overflow-x: hidden !important;
+  opacity: 0.85;
+}

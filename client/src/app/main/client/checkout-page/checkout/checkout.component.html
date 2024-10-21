@@ -1,0 +1,86 @@
+<div class="container" *ngIf="products.length == 0">
+    <h1 class="checkout-title" style="text-align: center; padding-top: 100px;">
+        There are no items in your cart. Go buy something!
+    </h1>
+</div>
+
+<div class="container" *ngIf="shoppingCart && products.length > 0">
+    <h1 class="checkout-title">
+        Checkout - <span class="text-bold">Total: ${{ shoppingCart.totalPrice }}</span>
+    </h1>
+    <hr style="border: 1px solid black;">
+    <div class="checkout-container">
+        <div class="cart">
+            <ul class="checkout-list">
+                <li class="checkout-list-item" *ngFor="let product of products">
+                    <div class="row">
+                        <div class="col-md-3"> <!-- Adjusted column size for smaller image -->
+                            <img src="{{ product.imageUrl }}" width="80%" class="checkout-product-img" /> <!-- Reduced image size -->
+                        </div>
+                        <div class="col-md-9"> <!-- Adjusted column size for text -->
+                            <h2 class="product-title">
+                                <span style="font-weight: 500 !important;">{{ product.brand }} | </span>{{ product.name }} &nbsp; 
+                                <span style="font-weight: 500 !important;">({{ product.category }})</span>
+                            </h2>
+                            <div class="price">
+                                <span *ngIf="product.discount">
+                                    <span class="dashed-red">${{ product.oldPrice }}</span>
+                                    &nbsp;&nbsp;${{ product.newPrice }}
+                                </span>
+                                <span *ngIf="!product.discount">${{ product.oldPrice }}</span>
+                            </div>
+                            <div class="description">
+                                {{ product.description }}
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <hr style="border: 1px solid black;">
+            <h3>{{ shoppingCart.quantity }} items.</h3>
+        </div>
+        <div class="payment-form-container">
+            <form [formGroup]="paymentForm" (ngSubmit)="buyProducts()">
+                <div class="form-group">
+                    <label for="customerName">First Name</label>
+                    <input id="customerName" formControlName="customerName" class="form-control" />
+                    <div *ngIf="paymentForm.get('customerName')?.invalid && (paymentForm.get('customerName')?.dirty || paymentForm.get('customerName')?.touched)">
+                        <small class="text-danger">First name is required.</small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="customerSurname">Last Name</label>
+                    <input id="customerSurname" formControlName="customerSurname" class="form-control" />
+                    <div *ngIf="paymentForm.get('customerSurname')?.invalid && (paymentForm.get('customerSurname')?.dirty || paymentForm.get('customerSurname')?.touched)">
+                        <small class="text-danger">Last name is required.</small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="customerAddress">Address</label>
+                    <input id="customerAddress" formControlName="customerAddress" class="form-control" />
+                    <div *ngIf="paymentForm.get('customerAddress')?.invalid && (paymentForm.get('customerAddress')?.dirty || paymentForm.get('customerAddress')?.touched)">
+                        <small class="text-danger">Address is required.</small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="customerEmail">Email</label>
+                    <input id="customerEmail" formControlName="customerEmail" class="form-control" />
+                    <div *ngIf="paymentForm.get('customerEmail')?.invalid && (paymentForm.get('customerEmail')?.dirty || paymentForm.get('customerEmail')?.touched)">
+                        <small class="text-danger">Valid email is required.</small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="customerPhone">Phone</label>
+                    <input id="customerPhone" formControlName="customerPhone" class="form-control" />
+                    <div *ngIf="paymentForm.get('customerPhone')?.invalid && (paymentForm.get('customerPhone')?.dirty || paymentForm.get('customerPhone')?.touched)">
+                        <small class="text-danger">Valid phone number is required.</small>
+                    </div>
+                </div>
+                <div class="button-group">
+                    <button type="submit" class="custom-btn" [disabled]="paymentForm.invalid">Buy</button>
+                    <button (click)="cancelCheckout()" class="custom-btn cancel-btn">Cancel</button>
+                </div>
+            </form>
+        </div>        
+    </div>
+</div>

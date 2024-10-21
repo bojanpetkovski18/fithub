@@ -1,0 +1,40 @@
+<div class="product-grid sha" *ngIf="product">
+  <div class="product-image">
+    <a [routerLink]="['/details', product?.uid]">
+      <img class="pic-1" [src]="product?.imageUrl" />
+      <div class="icons animate">
+        <button class="btn myRound"><i class="fas fa-info"></i></button>
+        <span *ngFor="let star of [1, 2, 3, 4, 5]" 
+              class="fa-star" 
+              [ngClass]="star <= product.rating ? 'fa-solid' : 'fa-regular'">
+        </span>
+        <span style="background:black; color: rgb(255, 255, 255); font-weight: 700;">
+          Q ({{ product?.quantity }})
+        </span>
+      </div>
+    </a>
+    <span *ngIf="product?.discount">
+      <span class="product-new-label">Sale</span>
+      <span class="product-discount-label">{{ product?.discount }}%</span>
+    </span>
+    <span *ngIf="!product?.discount" class="product-new-label" style="background: #c4b04c">Top</span>
+  </div>
+  <div class="product-content">
+    <h3 class="title">{{ product?.name }} <br> <b>{{ product?.brand }}</b></h3>
+    <span *ngFor="let star of [1, 2, 3, 4, 5]" 
+              class="fa-star" 
+              [ngClass]="star <= product.rating ? 'fa-solid' : 'fa-regular'">
+    </span>
+    <br>
+    <div *ngIf="product?.discount" class="price">
+      <span>${{ product?.oldPrice }}</span>
+      ${{ product?.newPrice }}
+    </div>
+    <div *ngIf="!product?.discount" class="price">
+      ${{ product?.oldPrice }}
+    </div>
+    <button (click)="onAddToCart()" class="add-to-cart" type="button" style="color: rgb(235, 96, 96)">
+      <i class="fas fa-cart-plus"></i> Add To Cart
+    </button>
+  </div>
+</div>

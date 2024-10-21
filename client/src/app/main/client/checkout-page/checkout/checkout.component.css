@@ -1,0 +1,123 @@
+.container {
+    padding-top: 20px;
+}
+
+.checkout-container {
+    display: flex; /* Use flexbox to align children side by side */
+    justify-content: space-between; /* Space out the left and right sections */
+    margin-top: 20px; /* Add some space above */
+}
+
+.cart {
+    flex: 1; /* Allow the cart to take available space */
+    margin-right: 20px; /* Add some space between the cart and payment form */
+}
+
+.checkout-list {
+    list-style: none;
+    padding: 0;
+}
+
+.checkout-list-item {
+    background: #fff;
+    padding: 10px; /* Reduced padding for smaller cards */
+    border-radius: 8px; /* Slightly reduced border radius */
+    margin-bottom: 15px; /* Adjusted margin for smaller space between cards */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ccc; /* Maintain the border */
+}
+
+.checkout-product-img {
+    border: 1px solid #ddd; /* Add border to the product image */
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2); /* Lighter shadow for smaller images */
+    max-height: 200px; /* Set a max height for the images */
+    object-fit: cover; /* Ensure the image covers the area without distortion */
+}
+
+.product-title {
+    font-size: 16px; /* Smaller font size for the product title */
+    font-weight: 700;
+}
+
+.price {
+    font-size: 14px; /* Smaller font size for prices */
+    font-weight: 700;
+}
+
+.checkout-product-img {
+    border: 1px solid #ddd; /* Add border to the product image */
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2); /* Lighten shadow */
+}
+
+.total-amount {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 20px;
+    text-align: center; /* Center the total amount text */
+}
+
+.payment-form-container {
+    flex: 0 0 30%; /* Fixed width for payment form section */
+    padding: 20px; /* Add padding around the payment form */
+    border: 1px solid #ccc; /* Border around the payment form */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Light shadow */
+    background: #fff; /* White background */
+}
+
+.buttons .row {
+    display: flex;
+    justify-content: center; /* Center buttons */
+}
+
+.custom-btn {
+    background: #000;
+    color: #fff;
+    display: inline-block; /* Inline block for buttons */
+    width: 150px;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 25px;
+    padding: 10px;
+    transition: 0.3s;
+    margin: 10px 0; /* Add vertical spacing between buttons */
+}
+
+.custom-btn:hover {
+    opacity: 0.88;
+}
+
+.cancel-btn {
+    background: #ff0000; /* Red color for cancel button */
+}
+
+.button-group {
+    display: flex; /* Use flexbox for inline alignment */
+    justify-content: center; /* Center the buttons horizontally */
+    margin-top: 20px; /* Space above the button group */
+}
+
+.button-group .custom-btn {
+    margin: 0 10px; /* Add horizontal space between buttons */
+}
+
+.text-bold {
+    font-weight: 700;
+}
+
+.cart, .payment-form-container {
+    margin-top: 50px;
+}
+
+.dashed-red {
+    color: red;         
+    text-decoration: line-through; 
+}
+
+.description {
+    margin-top: 15px;
+}
+
+.checkout-title {
+    margin-bottom: -20px;
+}
